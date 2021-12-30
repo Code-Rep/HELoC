@@ -18,12 +18,13 @@ gensim 3.8.3 <br />
 =======
 # Usage
 We extract the AST node embedding and path embedding in the following two steps:
-1. run ```python parsercode.py --lang oj```/ ```python parsercode.py --lang gcj```/ ```python parsercode.py --lang bcb``` to generate initial encoding.
-2. run ```python pre_training.py --dataset_nodeemb [The path to the dataset in which the nodes have been encoded]```
+run ```python pre_training.py --data_path [The path to the dataset] --device['cpu'/'cuda']```
 # Application of HELoC in downstream tasks
-We evaluate HELoC model on two tasks, code classification and code clone detection. It is also expected to be helpful in more downstream tasks.
+We evaluate HELoC model on three tasks, code classification, code clone detection and code clustering. It is also expected to be helpful in more downstream tasks.
 In the code classification task, we evaluate HELoC on two datasets: GCJ and OJ. In the code clone detection task, we further evaluate HELoC on three datasets: BCB, GCJ and OJClone. 
 ## Code Classification <br /> 
-run ```python cla.py --nodedataset_path [node emb path] --pathdataset_path [path emb path] --pre_model [pre_model]```
+run ```python cla.py --data_path [The path to the dataset] --device ['cpu'/'cuda'] --pre_model [pre_model]```
 ## Code Clone Detection <br />
-run ```python clo.py --dataset [The name of the dataset] --pair_file [The path of the clone pairs] --nodedataset_path [node emb path] --pathdataset_path [path emb path] --pre_model [pre_model]```
+run ```python clo.py --data_path [The path to the dataset] --device ['cpu'/'cuda'] --pre_model [pre_model]--pair_file [The path of the clone pairs]```
+## Code Clone Detection <br />
+run ```python clo.py --data_path [The path to the dataset] --device ['cpu'/'cuda'] --pre_model [pre_model]```
