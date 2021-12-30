@@ -1,7 +1,10 @@
 # HELoC: Hierarchical Contrastive Learning of Code Representations
 A PyTorch Implementation of "HELoC: Hierarchical Contrastive Learning of Code Representations"
 ## Map Any Code Snippet into Vector Embedding with HELoC
-HELoC is a self-supervised hierarchical contrastive learning model of code representation. Its key idea is to  formulate the learning of AST hierarchy as a pretext task of self-supervised contrastive learning, where cross-entropy and triplet losses are adopted as learning objectives to predict the level and learn the hierarchical relationships between nodes, which makes the representation vectors of nodes with greater differences in AST levels farther apart in the embedding space. By using such vectors, the structural similarities between code snippets can be measured more precisely. HELoC is self-supervised and can be applied to many source code related downstream tasks after pre-training. 
+HELoC is a self-supervised hierarchical contrastive learning model of code representation. Its key idea is to  formulate the learning of AST hierarchy as a pretext task of self-supervised contrastive learning, where node level prediction (NEP) and node relationship optimization (NRO) are adopted as learning objectives to predict the level and learn the three topological relationships between the nodes, which makes the representation vectors of nodes with greater differences in AST levels farther apart in the embedding space. This further manifests as the representation of the AST’s topology become more different in the embedding space, making it easier for the specific representation of a single AST to come to the surface and facilitating the downstream code similarity task.
+
+In addition, we design a specialized GNN for AST hierarchical structures called RSGNN, which captures the AST hierarchy comprehensively by combining the self-attention mechanism ( trained for capturing global structure) with GCN ( skilled in capturing local structure). In addition, we add internal residual connection and external residual connection to the self-attention mechanism to address the gradient vanishing problem. 
+HELoC is self-supervised and can be applied to many source code related downstream tasks after pre-training. 
 # Requirements <br />
 pytorch 1.7.0 <br />
 python 3.7.8 <br />
