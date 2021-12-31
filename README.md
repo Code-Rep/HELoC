@@ -26,5 +26,5 @@ In the code classification task, we evaluate HELoC on two datasets: GCJ and OJ. 
 run ```python cla.py --data_path [The path to the dataset] --device ['cpu'/'cuda'] --pre_model [pre_model]```
 ## Code Clone Detection <br />
 run ```python clo.py --data_path [The path to the dataset] --device ['cpu'/'cuda'] --pre_model [pre_model]--pair_file [The path of the clone pairs]```
-## Code Clone Detection <br />
-run ```python clo.py --data_path [The path to the dataset] --device ['cpu'/'cuda'] --pre_model [pre_model]```
+## Code Clustering <br />
+run ```python clu.py --data_path [The path to the dataset] --device ['cpu'/'cuda'] --pre_model [pre_model]```
