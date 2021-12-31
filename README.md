@@ -31,4 +31,5 @@ run ```python clo.py --data_path [The path to the dataset] --device ['cpu'/'cuda
 ## Code Clustering <br />
 run ```python clu.py --data_path [The path to the dataset] --device ['cpu'/'cuda'] --pre_model [pre_model]```
 # Compare to other work
-Many existing methods encode ASTs by leveraging deep neural networks to learn the features of source code. They aggregate nodes together based on parent-child connections to obtain the node representation so that the relationships among the adjacency levels can be captured. However, none of them are designed with the intention to learn the relationships between non-adjacent levels of AST nodes.
+Many existing methods aggregate nodes together based on parent-child connections to obtain the node representation so that the relationships among the adjacency levels can be captured. However, none of them are designed with the intention to learn the relationships between non-adjacent levels of AST nodes.
+For example, methods (such as ASTNN, TBCNN, and HAG) learn the AST structure by aggregating child nodes to their parent node, focusing only on nodes adjacent hierarchy. Consequently, topologically nonadjacent hierarchy between nodes (sometimes spanning multiple levels) are difficult to learn, resulting in such relationships in the embedding space not being accurately determined. 
