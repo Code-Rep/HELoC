@@ -30,3 +30,5 @@ run ```python cla.py --data_path [The path to the dataset] --device ['cpu'/'cuda
 run ```python clo.py --data_path [The path to the dataset] --device ['cpu'/'cuda'] --pre_model [pre_model]--pair_file [The path of the clone pairs]```
 ## Code Clustering <br />
 run ```python clu.py --data_path [The path to the dataset] --device ['cpu'/'cuda'] --pre_model [pre_model]```
+# Compare to other work
+Many existing methods encode ASTs by leveraging deep neural networks to learn the features of source code. They aggregate nodes together based on parent-child connections to obtain the node representation so that the relationships among the adjacency levels can be captured. However, none of them are designed with the intention to learn the relationships between non-adjacent levels of AST nodes.
