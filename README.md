@@ -18,11 +18,12 @@ gensim 3.8.3 <br />
 =======
 # Usage
 We extract the AST node embedding and path embedding in the following two steps:
+
 run ```python pre_training.py --data_path [The path to the dataset] --device['cpu'/'cuda']```
 # Application of HELoC in downstream tasks
 We evaluate HELoC model on three downstream tasks, code classification, code clone detection and code clustering. It is also expected to be helpful in more downstream tasks.
 ## Code Classification <br /> 
-In the code classification task, we evaluate HELoC on two datasets: GCJ and OJ. 
+In the code classification task, we evaluate HELoC on two datasets: GCJ and OJ, where GCJ consists of java programs and OJ dataset is composed of C functions.
 
 run ```python cla.py --data_path [The path to the dataset] --device ['cpu'/'cuda'] --pre_model [pre_model]```
 ## Code Clone Detection <br />
